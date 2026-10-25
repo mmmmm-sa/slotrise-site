@@ -1,1 +1,66 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SlotRise | Minecraft</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080d19;color:white;font-family:Arial,sans-serif}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;background:#0c1425;border-bottom:1px solid #1d3151}
+.logo{font-size:27px;font-weight:900;letter-spacing:2px;color:#59a9ff}
+nav a{color:#cbd7ed;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{text-align:center;padding:100px 20px 90px;background:radial-gradient(ellipse at top,#183b70,#0a1121 65%,#080d19)}
+.tag{color:#79b9ff;letter-spacing:4px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(42px,9vw,78px);margin:20px 0 12px;font-weight:900}
+h1 span{color:#58a8ff}
+.hero p{color:#b5c5df;line-height:1.8}
+.btn{display:inline-block;margin:20px 5px 0;padding:14px 22px;border-radius:7px;background:#3288ed;color:white;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
+.btn.secondary{background:#182740;border:1px solid #2a4366}
+section{max-width:1050px;margin:auto;padding:45px 22px}
+.eyebrow{color:#65acff;font-size:12px;letter-spacing:3px}
+h2{font-size:30px;margin-top:8px}
+.card{padding:25px;background:linear-gradient(135deg,#111f35,#0d1525);border:1px solid #223653;border-radius:12px;margin-top:20px}
+.date{color:#69adff;font-size:12px}
+.card h3{font-size:21px;margin:12px 0}
+.card p{color:#bac8dd;line-height:1.7}
+footer{text-align:center;padding:30px;color:#8493aa;border-top:1px solid #1c2b42;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">SLOT<span style="color:white">RISE</span></div>
+<nav><a href="#home">Ana Sayfa</a><a href="#updates">Güncellemeler</a></nav>
+</header>
+<div class="hero" id="home">
+<div class="tag">YENİ BİR MACERA BAŞLIYOR</div>
+<h1>READY TO <span>RISE?</span></h1>
+<p>SlotRise dünyasına hazır ol.<br>Macera, rekabet ve eğlence seni bekliyor.</p>
+<button class="btn" onclick="copyIP()">IP ADRESİNİ KOPYALA</button>
+<a class="btn secondary" href="#updates">GÜNCELLEMELER</a>
+<p id="status"></p>
+</div>
+<section id="updates">
+<div class="eyebrow">SLOT RISE HABERLERİ</div>
+<h2>Güncellemeler</h2>
+<p style="color:#9eafc8">Sunucudaki yenilikleri ve duyuruları buradan takip et.</p>
+<div class="card">
+<div class="date">SLOT RISE • DUYURU</div>
+<h3>Çok yakında!</h3>
+<p>SlotRise hazırlık aşamasında. Sunucumuzla ilgili haberler ve güncellemeler burada paylaşılacak.</p>
+</div>
+</section>
+<footer>© 2026 SlotRise — Tüm hakları saklıdır.</footer>
+<script>
+function copyIP(){
+navigator.clipboard.writeText("IP_ADRESIN_BURAYA").then(()=>{
+document.getElementById("status").textContent="IP kopyalandı!";
+}).catch(()=>{
+document.getElementById("status").textContent="Sunucu IP'si henüz eklenmedi.";
+});
+}
+</script>
+</body>
+</html>
+
