@@ -1,66 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b13">
+<meta name="description" content="SlotRise Minecraft sunucusu. Macera, rekabet ve eğlence seni bekliyor.">
 <title>SlotRise | Minecraft</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#080d19;color:white;font-family:Arial,sans-serif}
-header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;background:#0c1425;border-bottom:1px solid #1d3151}
-.logo{font-size:27px;font-weight:900;letter-spacing:2px;color:#59a9ff}
-nav a{color:#cbd7ed;text-decoration:none;margin-left:18px;font-size:14px}
-.hero{text-align:center;padding:100px 20px 90px;background:radial-gradient(ellipse at top,#183b70,#0a1121 65%,#080d19)}
-.tag{color:#79b9ff;letter-spacing:4px;font-size:12px;font-weight:bold}
-h1{font-size:clamp(42px,9vw,78px);margin:20px 0 12px;font-weight:900}
-h1 span{color:#58a8ff}
-.hero p{color:#b5c5df;line-height:1.8}
-.btn{display:inline-block;margin:20px 5px 0;padding:14px 22px;border-radius:7px;background:#3288ed;color:white;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
-.btn.secondary{background:#182740;border:1px solid #2a4366}
-section{max-width:1050px;margin:auto;padding:45px 22px}
-.eyebrow{color:#65acff;font-size:12px;letter-spacing:3px}
-h2{font-size:30px;margin-top:8px}
-.card{padding:25px;background:linear-gradient(135deg,#111f35,#0d1525);border:1px solid #223653;border-radius:12px;margin-top:20px}
-.date{color:#69adff;font-size:12px}
-.card h3{font-size:21px;margin:12px 0}
-.card p{color:#bac8dd;line-height:1.7}
-footer{text-align:center;padding:30px;color:#8493aa;border-top:1px solid #1c2b42;font-size:13px}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:#080b13;color:#f5f7ff;
+ font-family:Arial,Helvetica,sans-serif
+}
+header{
+ min-height:76px;padding:18px 7%;display:flex;
+ justify-content:space-between;align-items:center;gap:20px;
+ background:#0b101b;border-bottom:1px solid #202b40;
+ position:sticky;top:0;z-index:10
+}
+.logo{font-size:26px;font-weight:900;letter-spacing:2px;color:#63adff}
+.logo span{color:#fff}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:#b9c7dd;text-decoration:none;font-size:14px;transition:.2s}
+nav a:hover{color:#65adff}
+.hero{
+ min-height:590px;display:flex;flex-direction:column;
+ justify-content:center;align-items:center;text-align:center;
+ padding:85px 20px;
+ background:
+ radial-gradient(ellipse at 50% 0%,#203f70 0%,#101b30 42%,#080b13 78%)
+}
+.tag{
+ color:#80bdff;letter-spacing:4px;font-size:11px;
+ font-weight:bold
+}
+h1{font-size:clamp(43px,9vw,82px);margin:22px 0 14px;font-weight:900;letter-spacing:-2px}
+h1 span{
+ color:#64b0ff;text-shadow:0 0 35px #258aff55
+}
+.hero p{color:#b8c6dc;line-height:1.9;font-size:15px}
+.buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.btn{
+ display:inline-block;padding:14px 22px;border-radius:7px;
+ background:#3189f2;color:white;text-decoration:none;
+ font-size:13px;font-weight:bold;border:1px solid #489cff;
+ cursor:pointer;transition:.2s
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.btn.secondary{background:#121c2d;border-color:#2c3d59}
+section{max-width:1050px;margin:auto;padding:65px 22px}
+.eyebrow{color:#6db3ff;font-size:11px;letter-spacing:3px;font-weight:bold}
+h2{font-size:32px;margin:12px 0}
+.description{color:#9eafc8;line-height:1.8}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.feature{
+ padding:24px;border:1px solid #202f47;border-radius:12px;
+ background:linear-gradient(145deg,#121d30,#0b111d)
+}
+.feature h3{margin:0 0 10px;font-size:17px}
+.feature p{color:#9eafc8;font-size:14px;line-height:1.7;margin:0}
+.update-link{
+ display:flex;justify-content:space-between;align-items:center;gap:15px;
+ margin-top:28px;padding:24px;border:1px solid #28476c;
+ border-radius:12px;background:linear-gradient(110deg,#122643,#101625);
+ text-decoration:none;color:white
+}
+.update-link strong{font-size:17px}
+.update-link small{display:block;color:#a7bad4;margin-top:8px;line-height:1.5}
+.arrow{font-size:25px;color:#6bb3ff}
+footer{
+ text-align:center;padding:28px 15px;color:#74839a;
+ border-top:1px solid #202b40;font-size:12px
+}
+@media(max-width:650px){
+ header{padding:17px 5%;flex-wrap:wrap}
+ nav{gap:15px}
+ .features{grid-template-columns:1fr}
+ .hero{min-height:510px;padding:65px 18px}
+ section{padding:48px 18px}
+ h2{font-size:28px}
+}
 </style>
 </head>
+
 <body>
 <header>
-<div class="logo">SLOT<span style="color:white">RISE</span></div>
-<nav><a href="#home">Ana Sayfa</a><a href="#updates">Güncellemeler</a></nav>
+ <div class="logo">SLOT<span>RISE</span></div>
+ <nav>
+  <a href="#home">Ana Sayfa</a>
+  <a href="#ozellikler">Özellikler</a>
+  <a href="guncellemeler.html">Güncellemeler</a>
+ </nav>
 </header>
-<div class="hero" id="home">
-<div class="tag">YENİ BİR MACERA BAŞLIYOR</div>
-<h1>READY TO <span>RISE?</span></h1>
-<p>SlotRise dünyasına hazır ol.<br>Macera, rekabet ve eğlence seni bekliyor.</p>
-<button class="btn" onclick="copyIP()">IP ADRESİNİ KOPYALA</button>
-<a class="btn secondary" href="#updates">GÜNCELLEMELER</a>
-<p id="status"></p>
-</div>
-<section id="updates">
-<div class="eyebrow">SLOT RISE HABERLERİ</div>
-<h2>Güncellemeler</h2>
-<p style="color:#9eafc8">Sunucudaki yenilikleri ve duyuruları buradan takip et.</p>
-<div class="card">
-<div class="date">SLOT RISE • DUYURU</div>
-<h3>Çok yakında!</h3>
-<p>SlotRise hazırlık aşamasında. Sunucumuzla ilgili haberler ve güncellemeler burada paylaşılacak.</p>
-</div>
-</section>
+
+<main>
+ <div class="hero" id="home">
+  <div class="tag">YENİ BİR MACERA BAŞLIYOR</div>
+  <h1>READY TO <span>RISE?</span></h1>
+  <p>
+   Sıradanlıktan uzaklaş, kendi hikâyeni yaz.<br>
+   SlotRise dünyasında macera ve rekabet seni bekliyor.
+  </p>
+  <div class="buttons">
+   <button class="btn" onclick="copyIP()">IP ADRESİNİ KOPYALA</button>
+   <a class="btn secondary" href="guncellemeler.html">GÜNCELLEMELER</a>
+  </div>
+  <p id="status" aria-live="polite"></p>
+ </div>
+
+ <section id="ozellikler">
+  <div class="eyebrow">NEDEN SLOTRISE?</div>
+  <h2>Kendi efsaneni yaz.</h2>
+  <p class="description">
+   Yeni bir dünyaya adım at, arkadaşlarınla maceraya katıl
+   ve SlotRise'ın bir parçası ol.
+  </p>
+
+  <div class="features">
+   <div class="feature">
+    <h3>Özel Bir Dünya</h3>
+    <p>Keşfedilecek yerler ve seni bekleyen yeni maceralar.</p>
+   </div>
+   <div class="feature">
+    <h3>Rekabet</h3>
+    <p>Becerilerini göster, rakiplerine meydan oku.</p>
+   </div>
+   <div class="feature">
+    <h3>Topluluk</h3>
+    <p>Arkadaşlarınla buluş ve SlotRise dünyasında yerini al.</p>
+   </div>
+  </div>
+
+  <a class="update-link" href="guncellemeler.html">
+   <span>
+    <strong>Sunucu güncellemeleri</strong>
+    <small>Ametist PvP, sürüm notları ve yeni duyurular için tıkla.</small>
+   </span>
+   <span class="arrow">→</span>
+  </a>
+ </section>
+</main>
+
 <footer>© 2026 SlotRise — Tüm hakları saklıdır.</footer>
+
 <script>
 function copyIP(){
-navigator.clipboard.writeText("IP_ADRESIN_BURAYA").then(()=>{
-document.getElementById("status").textContent="IP kopyalandı!";
-}).catch(()=>{
-document.getElementById("status").textContent="Sunucu IP'si henüz eklenmedi.";
-});
+ const ip="IP_ADRESIN_BURAYA";
+ if(ip==="IP_ADRESIN_BURAYA"){
+  document.getElementById("status").textContent=
+   "Sunucu IP adresi henüz eklenmedi.";
+  return;
+ }
+ navigator.clipboard.writeText(ip).then(()=>{
+  document.getElementById("status").textContent="IP adresi kopyalandı!";
+ }).catch(()=>{
+  document.getElementById("status").textContent=
+   "IP kopyalanamadı: "+ip;
+ });
 }
 </script>
 </body>
 </html>
-
